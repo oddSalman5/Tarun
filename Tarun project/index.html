@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="view_tasks.php">View Tasks</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>Task Manager</h1>
+    <form action="add_task.php" method="POST">
+      <input type="text" name="task" placeholder="Enter your task" style="margin-bottom: 10px;">
+      <button type="submit">Add Task</button>
+    </form>
+    <div class="task-list">
+      <?php
+        $tasks = file("tasks.txt", FILE_IGNORE_NEW_LINES);
+         foreach ($tasks as $task) {
+         echo "<div class='task-item'>
+              <div class='buttons'>
+                  <button class='rewrite'>Rewrite</button>
+                  <button class='erase'>Erase</button>
+              </div>
+          </div>
+      
+    </div>
+  </div>
+</body>
+</html>
